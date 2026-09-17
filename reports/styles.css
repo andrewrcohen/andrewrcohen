@@ -1,0 +1,387 @@
+:root {
+  --fl-teal: #168f7f;
+  --fl-teal-dark: #0f6b5f;
+  --fl-gold: #f6b216;
+  --fl-ink: #2c2c2c;
+  --fl-muted: #5b5b5b;
+  --fl-line: #d9d9d9;
+  --fl-paper: #ffffff;
+  --page-w: 11in;
+  --page-h: 8.5in;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #d8d8d8;
+  color: var(--fl-ink);
+  font-family: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #1f1f1f;
+}
+
+.toolbar button {
+  border: 0;
+  border-radius: 4px;
+  background: var(--fl-teal);
+  color: #fff;
+  font: 600 0.9rem/1 "Source Sans 3", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+}
+
+.sheet {
+  width: var(--page-w);
+  margin: 1rem auto 2rem;
+}
+
+.page {
+  width: var(--page-w);
+  height: var(--page-h);
+  background: var(--fl-paper);
+  overflow: hidden;
+  position: relative;
+  page-break-after: always;
+  break-after: page;
+}
+
+.page + .page {
+  margin-top: 1rem;
+}
+
+.report-header {
+  display: grid;
+  grid-template-columns: 2.6in 1fr 2.8in;
+  align-items: center;
+  min-height: 0.95in;
+  padding: 0.18in 0.32in 0.14in;
+  border-bottom: 4px solid var(--fl-teal);
+  background: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  height: 0.58in;
+  width: auto;
+  display: block;
+}
+
+.report-title-block {
+  text-align: center;
+}
+
+.report-title {
+  margin: 0;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fl-teal-dark);
+  line-height: 1.05;
+}
+
+.report-subtitle {
+  margin: 0.08rem 0 0;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fl-muted);
+}
+
+.company-block {
+  text-align: right;
+}
+
+.company-kicker {
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fl-muted);
+}
+
+.company-name {
+  margin: 0.08rem 0 0;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--fl-ink);
+  line-height: 1.1;
+}
+
+.company-address,
+.company-meta {
+  margin: 0.08rem 0 0;
+  font-size: 11px;
+  color: var(--fl-muted);
+  line-height: 1.25;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 3.35in 1fr;
+  height: calc(var(--page-h) - 0.95in);
+}
+
+.intro {
+  padding: 0.32in 0.34in 0.28in;
+  background: linear-gradient(180deg, #eef6f8 0%, #d7e7ee 100%);
+}
+
+.intro p {
+  margin: 0 0 0.18in;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #334;
+}
+
+.quote {
+  margin-top: 0.28in;
+  max-width: 2.7in;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--fl-ink);
+}
+
+.features {
+  position: relative;
+  padding: 0.34in 0.4in 0.3in 0.42in;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(18, 58, 78, 0.55), rgba(18, 90, 86, 0.28)),
+    url("assets/background-truck-green.jpg") right center / cover no-repeat;
+}
+
+.features h2 {
+  margin: 0 0 0.28in;
+  max-width: 6.2in;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.05;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 0.42in 1fr;
+  gap: 0.12in;
+  margin-bottom: 0.18in;
+  max-width: 6.7in;
+}
+
+.feature svg {
+  width: 0.36in;
+  height: 0.36in;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.feature strong {
+  color: var(--fl-gold);
+  letter-spacing: 0.04em;
+}
+
+.page-products {
+  background: #fff;
+}
+
+.products-hero {
+  height: 1.55in;
+  padding: 0.22in 0.36in;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  background:
+    linear-gradient(180deg, rgba(10, 24, 18, 0.15), rgba(10, 24, 18, 0.55)),
+    url("assets/sell-page2-bg.jpg") center 42% / cover no-repeat;
+}
+
+.products-hero h2 {
+  margin: 0;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.1;
+  max-width: 7.5in;
+}
+
+.body-split {
+  display: grid;
+  grid-template-columns: 3.05in 1fr;
+  height: calc(var(--page-h) - 0.95in - 1.55in - 1.35in);
+}
+
+.product-copy {
+  padding: 0.22in 0.28in 0.1in 0.34in;
+}
+
+.product-item {
+  display: grid;
+  grid-template-columns: 0.28in 1fr;
+  gap: 0.1in;
+  margin-bottom: 0.14in;
+}
+
+.product-item h3 {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--fl-teal-dark);
+}
+
+.product-item p {
+  margin: 0.04rem 0 0;
+  font-size: 11.5px;
+  line-height: 1.3;
+  color: var(--fl-muted);
+}
+
+.matrix-wrap {
+  padding: 0.16in 0.28in 0.1in 0.08in;
+}
+
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10.5px;
+}
+
+.matrix th,
+.matrix td {
+  border-bottom: 1px solid #ececec;
+  padding: 0.045in 0.06in;
+  text-align: center;
+}
+
+.matrix th:first-child,
+.matrix td:first-child {
+  text-align: left;
+  color: var(--fl-muted);
+}
+
+.matrix thead th {
+  color: var(--fl-teal-dark);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.matrix .gold-col {
+  background: #fbf6e8;
+}
+
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  vertical-align: middle;
+}
+
+.dot.on {
+  background: var(--fl-teal);
+  border-color: var(--fl-teal);
+}
+
+.page-footer {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  height: 1.35in;
+}
+
+.bdp {
+  padding: 0.18in 0.34in;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--fl-ink);
+}
+
+.bdp h3 {
+  margin: 0 0 0.08in;
+  color: var(--fl-teal-dark);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.cta {
+  background: var(--fl-teal);
+  color: #fff;
+  padding: 0.2in 0.28in;
+}
+
+.cta h3 {
+  margin: 0 0 0.08in;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.04em;
+}
+
+.cta p,
+.cta small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.cta a {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+
+  .toolbar {
+    display: none !important;
+  }
+
+  .sheet,
+  .page,
+  .page + .page {
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .page {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  @page {
+    size: letter landscape;
+    margin: 0;
+  }
+}
