@@ -1,0 +1,15 @@
+{
+  "legalCompanyName": "Northstar Freight Lines",
+  "companyAddress": "2459 Forest Park Blvd",
+  "companyAddressLineTwo": "Suite 301",
+  "companyCity": "Fort Worth",
+  "companyState": "TX",
+  "companyZip": "76110",
+  "companyCountry": "USA",
+  "companyPhone": "817-522-4384",
+  "companyEmail": "dispatch@northstarfreight.example",
+  "motorCarrierNumber": "MC-123456",
+  "dotNumber": "1234567",
+  "firstName": "Alex",
+  "lastName": "Rivera"
+}
